@@ -98,7 +98,6 @@
                   <option value="{{ $k->kategori_komplain_id }}" @if($pengaduan->kategori_komplain_id == $k->kategori_komplain_id) selected @endif>
                     {{ $k->jenis_komplain }}
                   </option>
->>>>>>> 426357d (fix register)
                 @endforeach
               </select>
             </div>

@@ -31,6 +31,11 @@ class UserController extends Controller
             'password' => 'required|min:6',
             'jenis_kelamin' => 'required|string',
             'role' => 'required|string',
+<<<<<<< HEAD
+=======
+            'prodi' => 'required_if:role,mahasiswa|integer|nullable',
+            'angkatan' => 'required_if:role,mahasiswa|integer|nullable',
+>>>>>>> 972e4d6 (fix register)
             'prodi' => 'required_if:role,mahasiswa|integer|nullable',
             'angkatan' => 'required_if:role,mahasiswa|integer|nullable',
 <<<<<<< HEAD
@@ -52,10 +57,15 @@ class UserController extends Controller
             'prodi' => $request->prodi ?? null,
             'angkatan' => $request->angkatan ?? null,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'prodi' => $request->prodi ?? null,
             'angkatan' => $request->angkatan ?? null,
 =======
 >>>>>>> 426357d (fix register)
+=======
+            'prodi' => $request->prodi ?? null,
+            'angkatan' => $request->angkatan ?? null,
+>>>>>>> 972e4d6 (fix register)
             'role' => 'Pelapor',
             'password' => Hash::make($request->password),
         ]);
