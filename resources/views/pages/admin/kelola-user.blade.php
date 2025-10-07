@@ -133,6 +133,36 @@
                       </div>
                   </form>
               </div>
+<<<<<<< HEAD
+=======
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label fw-semibold small">Role</label>
+              <select class="form-select">
+                <option value="">Semua Role</option>
+                <option value="mahasiswa">Mahasiswa</option>
+                <option value="staff">Staff</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label fw-semibold small">Program Studi</label>
+              <select class="form-select" name="filter_prodi" id="filter_prodi>
+                @foreach ($prodis as $prodi)
+                  <option value="{{ $prodi->id }}">{{ $prodi->nama_prodi }}</option>
+                @endforeach
+                </select>
+            </div>
+
+            <div class="col-md-2">
+              <label class="form-label fw-semibold small">&nbsp;</label>
+              <button class="btn btn-primary w-100">
+                <i class="bi bi-funnel me-1"></i>Filter
+              </button>
+            </div>
+>>>>>>> c167a67 (fix user in kelola user)
           </div>
       </div>
   </div>
