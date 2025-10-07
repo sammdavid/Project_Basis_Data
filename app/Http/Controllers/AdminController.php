@@ -160,7 +160,6 @@ class AdminController extends Controller
     }
 
 
-<<<<<<< HEAD
 
     public function profilIndex()
     {
