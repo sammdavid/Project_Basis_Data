@@ -12,9 +12,6 @@ use App\Models\Prodi;
 use App\Models\JenisPekerjaan;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 use App\Models\Prodi;
 use App\Models\JenisPekerjaan;
 >>>>>>> 58272ab (fixed missing landingpage controller on web.php)
@@ -167,7 +164,6 @@ class AdminController extends Controller
     }
 
 
-<<<<<<< HEAD
 
     public function profilIndex()
     {
