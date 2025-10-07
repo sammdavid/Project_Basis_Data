@@ -141,7 +141,6 @@ Route::post('/register', function (Request $r) {
         'angkatan' => $r->angkatan,
         'password' => Hash::make($r->password),
     ]);
-
     return redirect()->route('login.form')->with('success', 'Akun berhasil terdaftar! Silakan login.');
 })->name('register');
 

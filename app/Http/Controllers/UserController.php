@@ -33,8 +33,11 @@ class UserController extends Controller
             'role' => 'required|string',
             'prodi' => 'required_if:role,mahasiswa|integer|nullable',
             'angkatan' => 'required_if:role,mahasiswa|integer|nullable',
+<<<<<<< HEAD
             'prodi' => 'required_if:role,mahasiswa|integer|nullable',
             'angkatan' => 'required_if:role,mahasiswa|integer|nullable',
+=======
+>>>>>>> 426357d (fix register)
         ]);
 
         User::create([
@@ -48,8 +51,11 @@ class UserController extends Controller
             'jenis_pekerjaan_id' => $request->jenis_pekerjaan_id ?? null,
             'prodi' => $request->prodi ?? null,
             'angkatan' => $request->angkatan ?? null,
+<<<<<<< HEAD
             'prodi' => $request->prodi ?? null,
             'angkatan' => $request->angkatan ?? null,
+=======
+>>>>>>> 426357d (fix register)
             'role' => 'Pelapor',
             'password' => Hash::make($request->password),
         ]);
