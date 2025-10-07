@@ -33,8 +33,6 @@ class UserController extends Controller
             'role' => 'required|string',
             'prodi' => 'required_if:role,mahasiswa|integer|nullable',
             'angkatan' => 'required_if:role,mahasiswa|integer|nullable',
-            'prodi' => 'required_if:role,mahasiswa|integer|nullable',
-            'angkatan' => 'required_if:role,mahasiswa|integer|nullable',
         ]);
 
         User::create([
@@ -46,10 +44,6 @@ class UserController extends Controller
             'alamat' => $request->alamat,
             'nomor_telepon' => $request->nomor_telepon,
             'jenis_pekerjaan_id' => $request->jenis_pekerjaan_id ?? null,
-            'prodi' => $request->prodi ?? null,
-            'angkatan' => $request->angkatan ?? null,
-            'prodi' => $request->prodi ?? null,
-            'angkatan' => $request->angkatan ?? null,
             'role' => 'Pelapor',
             'password' => Hash::make($request->password),
         ]);
