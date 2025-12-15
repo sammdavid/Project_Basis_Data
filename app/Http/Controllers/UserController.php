@@ -18,11 +18,19 @@ class UserController extends Controller
     // ============================
     // AUTH SECTION
     // ============================
-    public function showLogin()
-    {
-        return view('user');
-    }
+public function register(Request $request)
+{
+    $request->validate([
+        'nim' => 'required|unique:user,nim',
+        'nama' => 'required',
+        'password' => 'required|min:6',
+        'jenis_kelamin' => 'required|string',
+        'role' => 'required|string',
+        'prodi' => 'required_if:role,mahasiswa|integer|nullable',
+        'angkatan' => 'required_if:role,mahasiswa|integer|nullable',
+    ]);
 
+<<<<<<< HEAD
     public function register(Request $request)
     {
         $request->validate([
@@ -72,7 +80,39 @@ class UserController extends Controller
 
         return redirect()->route('login')->with('success', 'Akun berhasil dibuat, silakan login.');
     }
+=======
+    $user = User::create([
+        'nim' => $request->nim,
+        'nama' => $request->nama,
+        'jenis_kelamin' => $request->jenis_kelamin,
+        'tempat_lahir' => $request->tempat_lahir,
+        'tanggal_lahir' => $request->tanggal_lahir,
+        'alamat' => $request->alamat,
+        'nomor_telepon' => $request->nomor_telepon,
+        'jenis_pekerjaan_id' => $request->jenis_pekerjaan_id ?? null,
+        'prodi' => $request->prodi ?? null,
+        'angkatan' => $request->angkatan ?? null,
+        'role' => 'Pelapor',
+        'password' => Hash::make($request->password),
+    ]);
 
+    // ================================
+    // INSERT KE OLAP (dim_pelapor)
+    // ================================
+    DB::connection('mysql_olap')->table('dim_pelapor')->insert([
+        'user_id' => $user->user_id,
+        'nim' => $user->nim,
+        'nama' => $user->nama,
+        'email' => $user->email ?? null,
+        'angkatan' => $user->angkatan,
+        'jenis_kelamin' => $user->jenis_kelamin,
+        'nama_prodi' => $user->prodi ?? null,          // aman & sederhana
+        'nama_pekerjaan' => null,                      // isi nanti kalau perlu
+    ]);
+>>>>>>> 219693b (visualisasi)
+
+    return redirect()->route('login')->with('success', 'Akun berhasil dibuat, silakan login.');
+}
     public function login(Request $request)
     {
         $credentials = $request->only('nim', 'password');
@@ -209,3 +249,5 @@ class UserController extends Controller
         }
     }
 }
+
+
