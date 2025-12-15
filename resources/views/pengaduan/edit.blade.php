@@ -93,11 +93,6 @@
                   <option value="{{ $k->kategori_komplain_id }}" @if($pengaduan->kategori_komplain_id == $k->kategori_komplain_id) selected @endif>
                     {{ $k->jenis_komplain }}
                   </option>
-<<<<<<< HEAD
-=======
-                  <option value="{{ $k->kategori_komplain_id }}" @if($pengaduan->kategori_komplain_id == $k->kategori_komplain_id) selected @endif>
-                    {{ $k->jenis_komplain }}
-                  </option>
                 @endforeach
               </select>
             </div>
