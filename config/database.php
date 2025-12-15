@@ -83,6 +83,16 @@ return [
             ]) : [],
         ],
 
+        'mysql_olap' => [
+            'driver' => 'mysql',
+            'host' => env('OLAP_DB_HOST', '127.0.0.1'),
+            'database' => env('OLAP_DB_DATABASE', 'basisdata_olap'),
+            'username' => env('OLAP_DB_USERNAME', 'root'),
+            'password' => env('OLAP_DB_PASSWORD', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_general_ci',
+            ],
+
         'mariadb' => [
             'driver' => 'mariadb',
             'url' => env('DB_URL'),
